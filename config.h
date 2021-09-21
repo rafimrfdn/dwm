@@ -2,7 +2,7 @@
 
 /* appearance */
 static const unsigned int borderpx  = 1;        /* border pixel of windows */
-static const Gap default_gap        = {.isgap = 1, .realgap = 10, .gappx = 10};
+static const Gap default_gap        = {.isgap = 1, .realgap = 10, .gappx = 0};
 static const unsigned int snap      = 32;       /* snap pixel */
 static const unsigned int systraypinning = 0;   /* 0: sloppy systray follows selected monitor, >0: pin systray to monitor X */
 static const unsigned int systrayonleft = 1;   	/* 0: systray in the right corner, >0: systray on left of status text */
@@ -19,7 +19,8 @@ static const char col_gray1[]       = "#222222";
 static const char col_gray2[]       = "#444444";
 static const char col_gray3[]       = "#bbbbbb";
 static const char col_gray4[]       = "#eeeeee";
-static const char col_cyan[]        = "#005577";
+//static const char col_cyan[]        = "#005577";
+static const char col_cyan[]        = "#6885a2";
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
 	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
@@ -64,7 +65,7 @@ static const Layout layouts[] = {
 	{ MODKEY|ControlMask|ShiftMask, KEY,      toggletag,      {.ui = 1 << TAG} },
 
 /* helper for spawning shell commands in the pre dwm-5.0 fashion */
-#define SHCMD(cmd) { .v = (const char*[]){ "/bin/sh", "-c", cmd, NULL } }
+#define SHCMD(cmd) { .v = (const char*[]){ "/bin/zsh", "-c", cmd, NULL } }
 
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
@@ -137,9 +138,6 @@ static Key keys[] = {
     // Window nav (rofi)
     { MODKEY|ShiftMask, XK_d, spawn, SHCMD("rofi -show") },
 
-        // Terminal
-//    { MODKEY|ShiftMask, XK_Return, spawn, SHCMD("kitty") },
-
     // File explorer
     { MODKEY, XK_e, spawn, SHCMD("nemo") },
 
@@ -151,9 +149,9 @@ static Key keys[] = {
     { MODKEY|ShiftMask, XK_r, spawn, SHCMD("redshift -x") },
 
     // Screenshot
-    { 0, XK_Print,  spawn, SHCMD("scrot 'scrot_%Y-%m-%d_%X.jpg' -e 'mv $f ~/Pictures/'") },
-    { 0|ShiftMask, XK_Print,  spawn, SHCMD("scrot -s 'scrot_%Y-%m-%d_%X.jpg' -e 'mv $f ~/Pictures/'") },
-    { 0|ControlMask, XK_Print,  spawn, SHCMD("scrot -u 'scrot_%Y-%m-%d_%X.jpg' -e 'mv $f ~/Pictures/'") },
+    { 0, XK_Print,  spawn, SHCMD("scrot 'scrot_%Y-%m-%d_%X.png' -e 'mv $f ~/Pictures/'") },
+    { 0|ShiftMask, XK_Print,  spawn, SHCMD("scrot -s 'scrot_%Y-%m-%d_%X.png' -e 'mv $f ~/Pictures/'") },
+    { 0|ControlMask, XK_Print,  spawn, SHCMD("scrot -u 'scrot_%Y-%m-%d_%X.png' -e 'mv $f ~/Pictures/'") },
 
     // Background 
     { MODKEY, XK_z,      spawn,        SHCMD("feh --bg-scale --randomize ~/Pictures/wp/*") },
@@ -171,7 +169,6 @@ static Key keys[] = {
     // Brightness
     {0, XF86XK_MonBrightnessUp, spawn, SHCMD("xbacklight -inc 10")},
     {0, XF86XK_MonBrightnessDown, spawn, SHCMD("xbacklight -dec 10")},
-
 
 };
 
