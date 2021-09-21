@@ -1,14 +1,53 @@
+Welcome to my DWM Setup
+=======================
+
 This is my very first DWM 6.2 newest build. Very simple and works well for my workflow.
 
+
+Features
+--------
+
+The cool feature on this DWM setup is created with solid patches. I explore some patches and I think only this 6 pathes works great on my workflow.
+
 Patches in this DWM
-===================
+-------------------
 
 - Autostart           // use to make autostart.sh file run after DWM first start on system
-- Warp                // use to make mouse always follows the focus screen
-- Fullgaps            // use to create gaps between window
+- Warp                // make mouse always follows the focus screen
+- Fullgaps            // create gaps between opened window and can be toggled
 - Systray             // I use this to set tray before the dwmbloks (date status)
 - Pertag              // use this to make different tag mode for every tag. Ex: [1] set to Floating, but in [2] can set to Monocle
 - Alwayscenter        // make floating window always in center of the screen
+
+Keybinds
+--------
+
+There is no fancy binding, I make default DWM keybind to keep DWM as it is.
+
+Only change for `mod` key set to `windows` key.
+
+Dependencies apps
+-----------------
+
+Some apps might have to install to make `config.h` file works well, such as:
+- xbacklight
+- pamixer
+- rofi
+- feh
+- reshift
+- scrot
+- copyq
+- kitty
+- arandr
+- nemo 
+- brave
+
+
+Screenshot
+----------
+
+![dwm screenshot - minimalist - solid - mrfdn](https://github.com/rafimrfdn/dwm/blob/main/rafi-mrfdn-dwm-configuration.png)
+
 
 dwm - dynamic window manager
 ============================
