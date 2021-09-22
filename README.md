@@ -41,7 +41,16 @@ Some apps might have to install to make `config.h` file works well, such as:
 - arandr
 - nemo 
 - brave
+- picom
 
+How to setup this DWM build
+---------------------------
+
+This is important thing to do 
+1. To make transparent effect, you can set `picom.conf` which is include in this build
+2. Create symbolic link of `autostart.sh` file on `~/.local/share/dwm/`
+   - `cd ~/.local/share/dwm/`
+   - `ln -s path/to/autostart.sh autostart.sh`
 
 Screenshot
 ----------
