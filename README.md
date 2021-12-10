@@ -43,6 +43,14 @@ Some apps might have to install to make `config.h` file works well, such as:
 - brave
 - picom
 
+Fonts
+--------------------------
+
+I prefer using this font
+
+- SF Pro Display Medium for system
+- JetBrains Mono for terminal font
+
 How to setup this DWM build
 ---------------------------
 
